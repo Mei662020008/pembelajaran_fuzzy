@@ -1,0 +1,44 @@
+[System]
+Name='matlab fuzzy mamdani'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=7
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='permukaan__lantai'
+Range=[0 10]
+NumMFs=3
+MF1='halus':'trapmf',[0 0 1 3]
+MF2='sedang':'trimf',[2 5 8]
+MF3='tebal':'trapmf',[7 9 10 10]
+
+[Input2]
+Name='ketebalan__debu'
+Range=[0 10]
+NumMFs=3
+MF1='tipis':'trapmf',[0 0 1 4]
+MF2='sedang':'trapmf',[2 4 6 8]
+MF3='tebal':'trapmf',[6 9 10 10]
+
+[Output1]
+Name='daya__listrik'
+Range=[0 10]
+NumMFs=2
+MF1='kecil':'trapmf',[0 0 1 6]
+MF2='besar':'trapmf',[4 9 10 10]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 3, 2 (1) : 1
