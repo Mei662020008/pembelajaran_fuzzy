@@ -1,0 +1,3 @@
+mamdani 
+sugeno
+fuzzyy
